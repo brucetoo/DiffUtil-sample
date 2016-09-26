@@ -32,6 +32,10 @@ public class ActorAdapter extends RecyclerView.Adapter<ActorAdapter.ViewHolder> 
     }
 
     public void swapItems(List<Actor> actors) {
+
+        //1.Need a DiffCallback
+        //2.DiffCallback need be set in DiffUtil.DiffResult
+        //3.Call dispatchUpdateTo  with ListUpdateCallback to handle callback
         final ActorDiffCallback diffCallback = new ActorDiffCallback(this.actors, actors);
         final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
 

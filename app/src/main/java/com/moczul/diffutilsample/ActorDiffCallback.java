@@ -41,6 +41,13 @@ public class ActorDiffCallback extends DiffUtil.Callback{
     @Nullable
     @Override
     public Object getChangePayload(int oldItemPosition, int newItemPosition) {
+
+        /**
+         * This method will be called when {@link #areItemsTheSame(int, int)} return {@code true}
+         * and {@link #areContentsTheSame(int, int)} return {@code false}
+         * Means when handle the same item but some fields are not the same
+         * Maybe Update partly.
+         */
         // Implement method if you're going to use ItemAnimator
         return super.getChangePayload(oldItemPosition, newItemPosition);
     }
